@@ -5,3 +5,10 @@ install:
   - pip install -r req.txt
 script:
   - python ElasticSearch/manage.py test ElasticSearch/Search/
+
+after_success:
+  - eval "$(ssh-agent -s)" #start the ssh agent
+  - chmod 600 .travis/deploy_key.pem # this key should have push access
+  - ssh-add .travis/deploy_key.pem
+  - git remote add deploy https://github.com/neel1468/delivx_search_python.git
+  - git push deploy
