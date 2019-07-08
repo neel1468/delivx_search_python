@@ -4,7 +4,7 @@ cffi==1.11.5
 chardet==3.0.4
 coverage==4.5.3
 cryptography==2.3.1
--e git+https://github.com/neel1468/delivx_search_python.git@7a4536398403b9e7f039198ed9444958323e6c7e#egg=delivx_search_python
+-e git+https://github.com/neel1468/delivx_search_python.git@37b24a6f6628b844d70d60e89910ba4b025428b4#egg=delivx_search_python&subdirectory=ElasticSearch
 Django==2.0.4
 django-cors-headers==2.4.0
 django-jwt-auth==0.0.2
