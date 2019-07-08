@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: delivx-search-python
+Version: 0.1.0
+Summary: Search and Filters
+Home-page: https://bitbucket.org/rsharma87/delivx_search_python/src/master/
+Author: neel1368
+Author-email: nil@mobifyi.com
+License: MIT
+Description: Search and Filters
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.5.1
+Description-Content-Type: text/markdown
