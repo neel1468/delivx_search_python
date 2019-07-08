@@ -5,3 +5,9 @@ install:
   - pip install -r req.txt
 script:
   - python ElasticSearch/manage.py test ElasticSearch/Search/
+after_success:
+  - eval "$(ssh-agent -s)"
+  - chmod 600 ./deploy_key
+  - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - ssh-add ./deploy_key
+  - ssh -i ./deploy_key root@159.203.178.169 pwd
