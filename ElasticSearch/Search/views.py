@@ -712,9 +712,6 @@ class FilterParameters(APIView):
                 6: "price",
                 7: "colors",
             }
-            print(filterTypesList[final_filterType])
-            print(filter_parameters_query)
-            print(request.META['HTTP_POPULARSTATUS'])
             if request.META['HTTP_POPULARSTATUS'] == "0":
                 print("no trending")
                 print("Es query start", time.time() - start_time, "to run")

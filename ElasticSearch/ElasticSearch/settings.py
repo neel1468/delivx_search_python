@@ -47,6 +47,7 @@ TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_ARGS = [
     '--with-coverage',
     '--cover-package=ElasticSearch/Search/',
+    # '--cover-package=Search/',
 ]
 
 CORS_ALLOW_METHODS = (
