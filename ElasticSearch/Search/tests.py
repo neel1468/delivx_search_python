@@ -23,20 +23,20 @@ class LanguageList(TestCase):
         self.assertTrue(len(response.json()["data"]), ">= 1")
 
 
-class ProductSuggestions(TestCase):
-    def test_get_suggestion_found(self):
-        json_data = {"from":0,"size":10,"query":{"bool":{"must":[{"match":{"status":1}},{"match_phrase_prefix":{"productname.en":"arep"}},{"match":{"storeId":"5cecda4b23c6d964170d5263"}}]}}}
-        response = self.client.post("/suggestions/", json=json_data,HTTP_LANGUAGE="en",
-                                    HTTP_ZONEID="5d08c6e6087d92283a7f9634")
-        print(response.json())
-        self.assertEqual(response.status_code, 200)
-        self.assertTrue(len(response.json()["data"]), ">= 0")
-
-    def test_get_suggestion_internal(self):
-        json_data = {"from":0,"size":10,"query":{"bool":{"must":[{"match":{"status":1}},{"match_phrase_prefix":{"productname.en":"arep"}},{"match":{"storeId":"5cecda4b23c6d964170d5263"}}]}}}
-        response = self.client.post("/suggestions/", json=json_data,
-                                    HTTP_LANGUAGE="pt", HTTP_ZONEID="5d08c6e6087d92283a7f9636")
-        self.assertEqual(response.status_code, 404)
+# class ProductSuggestions(TestCase):
+#     def test_get_suggestion_found(self):
+#         json_data = {"from":0,"size":10,"query":{"bool":{"must":[{"match":{"status":1}},{"match_phrase_prefix":{"productname.en":"arep"}},{"match":{"storeId":"5cecda4b23c6d964170d5263"}}]}}}
+#         response = self.client.post("/suggestions/", json=json_data,HTTP_LANGUAGE="en",
+#                                     HTTP_ZONEID="5d08c6e6087d92283a7f9634")
+#         print(response.json())
+#         self.assertEqual(response.status_code, 200)
+#         self.assertTrue(len(response.json()["data"]), ">= 0")
+#
+#     def test_get_suggestion_internal(self):
+#         json_data = {"from":0,"size":10,"query":{"bool":{"must":[{"match":{"status":1}},{"match_phrase_prefix":{"productname.en":"arep"}},{"match":{"storeId":"5cecda4b23c6d964170d5263"}}]}}}
+#         response = self.client.post("/suggestions/", json=json_data,
+#                                     HTTP_LANGUAGE="pt", HTTP_ZONEID="5d08c6e6087d92283a7f9636")
+#         self.assertEqual(response.status_code, 404)
 
 
 class FilterParameters(TestCase):
